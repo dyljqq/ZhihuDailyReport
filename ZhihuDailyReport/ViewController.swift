@@ -8,18 +8,29 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: BaseViewController {
+  
+  var count = 0
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  
+  @IBAction func resetAction(_ sender: Any) {
+    count = 0
+    send(router: Router.lastNews, completionHandler: { (storyList: StoryList?) in
+      guard let storyList = storyList else { return }
+      print("last news: \(storyList)")
+    })
   }
-
-
+  
+  @IBAction func nextAction(_ sender: Any) {
+    count += 1
+    send(router: Router.oldStories(Date.diff(day: 1))) { (storyList: StoryList?) in
+      guard let storyList = storyList else { return }
+      print("day: \(self.count), old stories: \(storyList)")
+    }
+  }
+  
 }
 

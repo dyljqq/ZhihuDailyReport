@@ -1,0 +1,33 @@
+PODS:
+  - Alamofire (4.7.0)
+  - AnimatedGIFImageSerialization (0.2.0)
+  - FSPagerView (0.7.1)
+  - Kingfisher (4.6.4)
+  - PKHUD (5.0.0)
+  - SnapKit (4.0.0)
+  - SwiftyJSON (4.0.0)
+  - UzysAnimatedGifPullToRefresh (0.9.8):
+    - AnimatedGIFImageSerialization (~> 0.2.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - FSPagerView
+  - Kingfisher
+  - PKHUD
+  - SnapKit
+  - SwiftyJSON
+  - UzysAnimatedGifPullToRefresh
+
+SPEC CHECKSUMS:
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  AnimatedGIFImageSerialization: b0f0cfe71eac1ee45a3d57ae533c23b8e6f29501
+  FSPagerView: 958aba39684e1573755ddcfcc29f7eebb8413cee
+  Kingfisher: 68498a706e46c2a050b0c9572f100e5db407f6e0
+  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  UzysAnimatedGifPullToRefresh: ca441a89a0cbf704c0c9dd2f1320fb91ffc7f86b
+
+PODFILE CHECKSUM: a3292809f954b7ada89084fca0eac8e44b6310e7
+
+COCOAPODS: 1.4.0
