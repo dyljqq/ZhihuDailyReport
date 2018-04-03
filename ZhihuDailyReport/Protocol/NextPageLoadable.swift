@@ -12,7 +12,7 @@ protocol NextPageLoadable: class {
   
   associatedtype DataType
   
-  var data: [DataType] { get set }
+  var dataSource: [DataType] { get set }
   var nextPageState: NextPageState { get set }
   
   func performLoad(successHandler: @escaping (_ rows: [DataType], _ hasNext: Bool) -> (), failureHandler: @escaping (String) -> ())
@@ -21,21 +21,21 @@ protocol NextPageLoadable: class {
 
 extension NextPageLoadable {
   
-  func loadNext(start: Int, reloadView: Reloadable) {
+  func loadNext(start: Int, reloadView: Reloadable, refreshView: RefreshView? = nil) {
     guard nextPageState.hasNext else { return }
-    guard nextPageState.isLoading else { return }
+    guard !nextPageState.isLoading else { return }
     
     nextPageState.update(start: start, hasNext: nextPageState.hasNext, isLoading: true)
     
     performLoad(successHandler: { [weak self] items, hasNext in
-      
       guard let strongSelf = self else { return }
+      refreshView?.endRefresh()
       
       if start == 0 {
-        strongSelf.data.removeAll()
+        strongSelf.dataSource.removeAll()
       }
       
-      strongSelf.data.append(contentsOf: items)
+      strongSelf.dataSource.append(contentsOf: items)
       strongSelf.nextPageState.update(start: strongSelf.nextPageState.start, hasNext: hasNext, isLoading: false)
       reloadView.reloadData()
       
