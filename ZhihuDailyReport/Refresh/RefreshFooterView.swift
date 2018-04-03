@@ -64,6 +64,7 @@ class RefreshFooterView: RefreshView {
   }
   
   override func normalRefresh() {
+    self.isHidden = false
     state = .normal
     stateLabel.text = refreshText
     
@@ -72,9 +73,11 @@ class RefreshFooterView: RefreshView {
     activityView.stopAnimating()
     activityView.isHidden = true
     
-    UIView.animate(withDuration: 0.2, animations: {
-      self.scrollView?.contentInset = self.scrollViewOriginalEdgeInsets
-      self.arrowImageView.transform = CGAffineTransform.identity
+    guard let scrollView = scrollView else { return }
+    UIView.animate(withDuration: 0.2, animations: {}, completion: { finished in
+      UIView.animate(withDuration: 0.2, animations: {
+        scrollView.contentInset = self.scrollViewOriginalEdgeInsets
+      })
     })
   }
   
@@ -104,9 +107,9 @@ class RefreshFooterView: RefreshView {
       var inset = self.scrollViewOriginalEdgeInsets
       inset.bottom += self.threshHold
       self.scrollView?.contentInset = inset
+    }, completion: { finished in
+      self.refreshHandler(self)
     })
-    
-    refreshHandler(self)
   }
   
   override func scrollViewContentOffsetDidChange(scrollView: UIScrollView) {
@@ -114,17 +117,13 @@ class RefreshFooterView: RefreshView {
     let beyondScrollViewHeight = scrollView.contentSize.height - realHeight
     guard beyondScrollViewHeight > 0 else { return }
     
-    let y = scrollView.contentOffset.y + scrollView.frame.height - scrollViewOriginalEdgeInsets.top - scrollView.contentSize.height
+    let y = scrollView.contentOffset.y + scrollView.bounds.height - scrollViewOriginalEdgeInsets.top - scrollView.contentSize.height
     guard y > 0 else { return }
     
     if scrollView.isDragging {
       state = y >= threshHold ? .pulling : .normal
     } else {
-      if state == .pulling {
-        state = .loading
-      } else {
-        state = .normal
-      }
+      state = state == .pulling ? .loading : .normal
     }
   }
   

@@ -21,4 +21,5 @@ struct Color {
   static let main = UIColor(hex: 0xf0473d)
   static let text = UIColor(hex: 0x222222)
   static let background = UIColor(hex: 0xf5f5f5)
+  static let navigation = UIColor(r: 1, g: 131, b: 209)
 }

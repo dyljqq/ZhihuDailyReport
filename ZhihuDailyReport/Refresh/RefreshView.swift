@@ -67,25 +67,15 @@ class RefreshView: UIView, Refreshable {
     state = .normal
   }
   
-  func setup() {
-    
-  }
+  func setup() {}
   
-  func normalRefresh() {
-    
-  }
+  func normalRefresh() {}
   
-  func pullingRefresh() {
-    
-  }
+  func pullingRefresh() {}
   
-  func loadingRefresh() {
-    
-  }
+  func loadingRefresh() {}
   
-  func scrollViewContentOffsetDidChange(scrollView: UIScrollView) {
-    
-  }
+  func scrollViewContentOffsetDidChange(scrollView: UIScrollView) {}
 }
 
 fileprivate var refreshContextKey = "refreshContextKey"

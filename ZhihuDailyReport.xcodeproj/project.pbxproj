@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6D8DC922ACBD8243524C4242 /* Pods_ZhihuDailyReport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF62FCE880C1ADDE7202E06F /* Pods_ZhihuDailyReport.framework */; };
+		731D9F4C2073265D00F46D3B /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D9F4A2073265D00F46D3B /* TitleCell.swift */; };
+		731D9F4D2073265D00F46D3B /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731D9F4B2073265D00F46D3B /* TitleCell.xib */; };
 		73E29979206DEFFC00392C6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E29978206DEFFC00392C6A /* AppDelegate.swift */; };
 		73E2997E206DEFFC00392C6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73E2997C206DEFFC00392C6A /* Main.storyboard */; };
 		73E29980206DEFFC00392C6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73E2997F206DEFFC00392C6A /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		51ED64C657FB42E96019A9A8 /* Pods-ZhihuDailyReport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhihuDailyReport.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhihuDailyReport/Pods-ZhihuDailyReport.debug.xcconfig"; sourceTree = "<group>"; };
 		5EEC02AAD4AB3438FC8E1E3E /* Pods-ZhihuDailyReport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhihuDailyReport.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhihuDailyReport/Pods-ZhihuDailyReport.release.xcconfig"; sourceTree = "<group>"; };
+		731D9F4A2073265D00F46D3B /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
+		731D9F4B2073265D00F46D3B /* TitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
 		73E29975206DEFFC00392C6A /* ZhihuDailyReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhihuDailyReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E29978206DEFFC00392C6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73E2997D206DEFFC00392C6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -189,6 +193,8 @@
 			children = (
 				73E299B42071D68100392C6A /* StoryCell.swift */,
 				73E299B52071D68100392C6A /* StoryCell.xib */,
+				731D9F4A2073265D00F46D3B /* TitleCell.swift */,
+				731D9F4B2073265D00F46D3B /* TitleCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -287,6 +293,7 @@
 				73E29980206DEFFC00392C6A /* Assets.xcassets in Resources */,
 				73E2997E206DEFFC00392C6A /* Main.storyboard in Resources */,
 				73E299B72071D68100392C6A /* StoryCell.xib in Resources */,
+				731D9F4D2073265D00F46D3B /* TitleCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +379,7 @@
 				73E2998F206E0EC500392C6A /* Router.swift in Sources */,
 				73E299A1206E273100392C6A /* UIView+Ext.swift in Sources */,
 				73E299B62071D68100392C6A /* StoryCell.swift in Sources */,
+				731D9F4C2073265D00F46D3B /* TitleCell.swift in Sources */,
 				73E299AE206E2D0800392C6A /* NextPageLoadable.swift in Sources */,
 				73E299C720722AA600392C6A /* RefreshView.swift in Sources */,
 				73E2998D206DF05000392C6A /* APIClientable.swift in Sources */,

@@ -9,6 +9,7 @@
 import Foundation
 
 fileprivate let oneDaySeconds = 24 * 60 * 60
+fileprivate let dateFormat = "yyyyMMdd"
 
 extension Date {
   
@@ -17,8 +18,14 @@ extension Date {
     let date = Date(timeIntervalSinceNow: timeInterval)
     
     let formatter = DateFormatter()
-    formatter.dateFormat = "yyyyMMdd"
+    formatter.dateFormat = dateFormat
     return formatter.string(from: date)
+  }
+  
+  static func to(dateString: String) -> Date? {
+    let formatter = DateFormatter()
+    formatter.dateFormat = dateFormat
+    return formatter.date(from: dateString)
   }
   
 }

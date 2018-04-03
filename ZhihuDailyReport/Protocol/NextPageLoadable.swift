@@ -28,8 +28,8 @@ extension NextPageLoadable {
     nextPageState.update(start: start, hasNext: nextPageState.hasNext, isLoading: true)
     
     performLoad(successHandler: { [weak self] items, hasNext in
-      
       guard let strongSelf = self else { return }
+      refreshView?.endRefresh()
       
       if start == 0 {
         strongSelf.dataSource.removeAll()
@@ -38,8 +38,6 @@ extension NextPageLoadable {
       strongSelf.dataSource.append(contentsOf: items)
       strongSelf.nextPageState.update(start: strongSelf.nextPageState.start, hasNext: hasNext, isLoading: false)
       reloadView.reloadData()
-      
-      refreshView?.endRefresh()
       
     }, failureHandler: { msg in
       
