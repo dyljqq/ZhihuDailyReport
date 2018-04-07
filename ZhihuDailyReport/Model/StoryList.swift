@@ -17,8 +17,8 @@ struct StoryList {
   
   init(_ json: JSON) {
     self.date = json["date"].stringValue
-    self.stories = json["stories"].arrayValue.flatMap { Story($0) }
-    self.topStories = json["top_stories"].arrayValue.flatMap { Story($0) }
+    self.stories = json["stories"].arrayValue.compactMap { Story($0) }
+    self.topStories = json["top_stories"].arrayValue.compactMap { Story($0) }
   }
   
 }

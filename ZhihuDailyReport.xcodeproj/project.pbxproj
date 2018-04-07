@@ -38,6 +38,9 @@
 		73E299C5207227E500392C6A /* Refreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E299C4207227E500392C6A /* Refreshable.swift */; };
 		73E299C720722AA600392C6A /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E299C620722AA600392C6A /* RefreshView.swift */; };
 		73E299C92072336000392C6A /* RefreshFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E299C82072336000392C6A /* RefreshFooterView.swift */; };
+		73F3C4252078F2F600926085 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3C4242078F2F600926085 /* Consts.swift */; };
+		73F3C4272078F35200926085 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3C4262078F35200926085 /* NavigationController.swift */; };
+		73F3C4292078FA2100926085 /* UINavigationBar+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3C4282078FA2100926085 /* UINavigationBar+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +78,9 @@
 		73E299C4207227E500392C6A /* Refreshable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refreshable.swift; sourceTree = "<group>"; };
 		73E299C620722AA600392C6A /* RefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshView.swift; sourceTree = "<group>"; };
 		73E299C82072336000392C6A /* RefreshFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshFooterView.swift; sourceTree = "<group>"; };
+		73F3C4242078F2F600926085 /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
+		73F3C4262078F35200926085 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		73F3C4282078FA2100926085 /* UINavigationBar+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Ext.swift"; sourceTree = "<group>"; };
 		BF62FCE880C1ADDE7202E06F /* Pods_ZhihuDailyReport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhihuDailyReport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -151,6 +157,7 @@
 				73E299B32071D66900392C6A /* Views */,
 				73E29996206E171A00392C6A /* BaseViewController.swift */,
 				73E299B12071D3F700392C6A /* MainViewController.swift */,
+				73F3C4262078F35200926085 /* NavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -173,6 +180,7 @@
 				73E299A6206E2A4F00392C6A /* UICollectionViewCell+Ext.swift */,
 				73E299A8206E2BA500392C6A /* UICollectionView+Ext.swift */,
 				73E299BF2071D9DD00392C6A /* UIColor+Ext.swift */,
+				73F3C4282078FA2100926085 /* UINavigationBar+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -203,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				73E299BD2071D96900392C6A /* Color.swift */,
+				73F3C4242078F2F600926085 /* Consts.swift */,
 			);
 			path = Consts;
 			sourceTree = "<group>";
@@ -375,6 +384,7 @@
 				73E299A3206E28FE00392C6A /* UITableView+Ext.swift in Sources */,
 				73E299A5206E29A500392C6A /* UITableViewCell+Ext.swift in Sources */,
 				73E2999F206E1E5400392C6A /* Date+Ext.swift in Sources */,
+				73F3C4252078F2F600926085 /* Consts.swift in Sources */,
 				73E299C92072336000392C6A /* RefreshFooterView.swift in Sources */,
 				73E2998F206E0EC500392C6A /* Router.swift in Sources */,
 				73E299A1206E273100392C6A /* UIView+Ext.swift in Sources */,
@@ -384,7 +394,9 @@
 				73E299C720722AA600392C6A /* RefreshView.swift in Sources */,
 				73E2998D206DF05000392C6A /* APIClientable.swift in Sources */,
 				73E299C2207211AC00392C6A /* UIScrollView+Ext.swift in Sources */,
+				73F3C4272078F35200926085 /* NavigationController.swift in Sources */,
 				73E299A7206E2A4F00392C6A /* UICollectionViewCell+Ext.swift in Sources */,
+				73F3C4292078FA2100926085 /* UINavigationBar+Ext.swift in Sources */,
 				73E29991206E14CB00392C6A /* Decodable.swift in Sources */,
 				73E29979206DEFFC00392C6A /* AppDelegate.swift in Sources */,
 				73E299BE2071D96900392C6A /* Color.swift in Sources */,
