@@ -69,8 +69,6 @@ extension UIScrollView {
 
 // Pull & Refresh
 
-fileprivate let screenWidth = UIScreen.main.bounds.width
-
 extension UIScrollView {
   
   @discardableResult

@@ -13,9 +13,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let navigationController = storyboard.instantiateViewController(withIdentifier: "navigationController") as? NavigationController
+    
+    window?.backgroundColor = UIColor.white
+    window?.rootViewController = navigationController
+    window?.makeKeyAndVisible()
+    
+    configNavigationBar()
+    
     return true
   }
 
@@ -41,6 +50,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
 
+}
 
+extension AppDelegate {
+  
+  fileprivate func configNavigationBar() {
+    UINavigationBar.appearance().barTintColor = Color.navigation
+    UINavigationBar.appearance().tintColor = UIColor.white
+    UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+    UINavigationBar.appearance().isTranslucent = false
+    
+    UIApplication.shared.statusBarStyle = .lightContent
+  }
+  
 }
 
