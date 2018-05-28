@@ -21,7 +21,7 @@ struct Story {
     self.id = json["id"].intValue
     self.title = json["title"].stringValue
     self.type = json["type"].intValue
-    self.images = json["images"].arrayValue.flatMap { $0.stringValue }
+    self.images = json["images"].arrayValue.compactMap { $0.stringValue }
     
     self.image = self.images.isEmpty ? json["image"].stringValue : (self.images.first ?? "")
   }
