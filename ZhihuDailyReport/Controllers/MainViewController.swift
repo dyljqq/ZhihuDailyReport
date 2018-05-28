@@ -43,6 +43,13 @@ class MainViewController: BaseViewController, NextPageLoadable {
   var nextPageState: NextPageState = NextPageState()
   var banners = [Story]()
   
+  fileprivate var currentDataSource: (UITableViewDataSource & UITableViewDelegate)? {
+    didSet {
+      tableView.delegate = currentDataSource
+      tableView.dataSource = currentDataSource
+      tableView.reloadData()
+    }
+  }
   fileprivate var points = [TitlePoint]()
   
   lazy var bannerView: FSPagerView = {
@@ -56,9 +63,6 @@ class MainViewController: BaseViewController, NextPageLoadable {
   
   lazy var tableView: UITableView = {
     let tableView = UITableView(frame: CGRect.zero)
-    tableView.delegate = self
-    tableView.dataSource = self
-    tableView.prefetchDataSource = self
     tableView.tableFooterView = UIView()
     tableView.backgroundColor = Color.background
     tableView.tableHeaderView = self.bannerView
@@ -122,62 +126,35 @@ class MainViewController: BaseViewController, NextPageLoadable {
     tableView.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
+    
+    setDataSource()
+  }
+  
+  func setDataSource() {
+    let cellFactory: (CellDataType) -> (UITableViewCell) = { [unowned self] type in
+      switch type {
+      case .title(let title):
+        let cell = self.tableView.dequeue() as TitleCell
+        cell.render(text: title)
+        return cell
+      case .story(let story):
+        let cell = self.tableView.dequeue() as StoryCell
+        cell.render(story: story)
+        return cell
+      }
+    }
+    let cellHeightClosure: (CellDataType) -> (CGFloat) = { type in
+      return type.height
+    }
+    let dataSource = ListDataSource<CellDataType>(items: self.dataSource, cellFactory: cellFactory, cellHeightClosure: cellHeightClosure)
+    dataSource.scrollViewDidScrollClosure = { [unowned self] scrollView in
+      self.setupNavigationBar(by: scrollView.contentOffset.y)
+    }
+    currentDataSource = dataSource
   }
   
   deinit {}
 
-}
-
-extension MainViewController: UITableViewDataSource {
-  
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return dataSource.count
-  }
-  
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let type = dataSource[indexPath.row]
-    switch type {
-    case .title(let title):
-      let cell = tableView.dequeue() as TitleCell
-      cell.render(text: title)
-      return cell
-    case .story(let story):
-      let cell = tableView.dequeue() as StoryCell
-      cell.render(story: story)
-      return cell
-    }
-  }
-  
-  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-    
-  }
-  
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return dataSource[indexPath.row].height
-  }
-  
-}
-
-extension MainViewController: UITableViewDelegate {
-  
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    tableView.deselectRow(at: indexPath, animated: true)
-  }
-  
-}
-
-extension MainViewController: UITableViewDataSourcePrefetching {
-  func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-    
-  }
-}
-
-extension MainViewController: UIScrollViewDelegate {
-  
-  func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    setupNavigationBar(by: scrollView.contentOffset.y)
-  }
-  
 }
 
 extension MainViewController: FSPagerViewDataSource {
@@ -230,7 +207,6 @@ fileprivate extension MainViewController {
 }
 
 fileprivate extension String {
-  
   var title: String {
     guard let date = Date.to(dateString: self) else { return self }
     

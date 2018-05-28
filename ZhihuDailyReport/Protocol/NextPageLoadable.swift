@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias TableViewable = (UITableViewDataSource & UITableViewDelegate)
+
 protocol NextPageLoadable: class {
   
   associatedtype DataType
@@ -15,6 +17,7 @@ protocol NextPageLoadable: class {
   var dataSource: [DataType] { get set }
   var nextPageState: NextPageState { get set }
   
+  func setDataSource()
   func performLoad(successHandler: @escaping (_ rows: [DataType], _ hasNext: Bool) -> (), failureHandler: @escaping (String) -> ())
   
 }
@@ -37,7 +40,7 @@ extension NextPageLoadable {
       
       strongSelf.dataSource.append(contentsOf: items)
       strongSelf.nextPageState.update(start: strongSelf.nextPageState.start, hasNext: hasNext, isLoading: false)
-      reloadView.reloadData()
+      strongSelf.setDataSource()
       
     }, failureHandler: { msg in
       
