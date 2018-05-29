@@ -11,6 +11,7 @@
 		731D9F4C2073265D00F46D3B /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D9F4A2073265D00F46D3B /* TitleCell.swift */; };
 		731D9F4D2073265D00F46D3B /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731D9F4B2073265D00F46D3B /* TitleCell.xib */; };
 		73ACC5D320BBB66C00F3356E /* ListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ACC5D220BBB66C00F3356E /* ListDataSource.swift */; };
+		73ACC5D820BD36D200F3356E /* MainStoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ACC5D720BD36D200F3356E /* MainStoryDataSource.swift */; };
 		73E29979206DEFFC00392C6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E29978206DEFFC00392C6A /* AppDelegate.swift */; };
 		73E2997E206DEFFC00392C6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73E2997C206DEFFC00392C6A /* Main.storyboard */; };
 		73E29980206DEFFC00392C6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73E2997F206DEFFC00392C6A /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		731D9F4A2073265D00F46D3B /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		731D9F4B2073265D00F46D3B /* TitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
 		73ACC5D220BBB66C00F3356E /* ListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataSource.swift; sourceTree = "<group>"; };
+		73ACC5D720BD36D200F3356E /* MainStoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStoryDataSource.swift; sourceTree = "<group>"; };
 		73E29975206DEFFC00392C6A /* ZhihuDailyReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhihuDailyReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E29978206DEFFC00392C6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73E2997D206DEFFC00392C6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				73ACC5D220BBB66C00F3356E /* ListDataSource.swift */,
+				73ACC5D720BD36D200F3356E /* MainStoryDataSource.swift */,
 			);
 			path = Adapter;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				73E29979206DEFFC00392C6A /* AppDelegate.swift in Sources */,
 				73E299BE2071D96900392C6A /* Color.swift in Sources */,
 				73E299B0206E2FB000392C6A /* Reloadable.swift in Sources */,
+				73ACC5D820BD36D200F3356E /* MainStoryDataSource.swift in Sources */,
 				73E299AC206E2CD100392C6A /* NextPageState.swift in Sources */,
 				73E299A9206E2BA500392C6A /* UICollectionView+Ext.swift in Sources */,
 				73E29997206E171A00392C6A /* BaseViewController.swift in Sources */,

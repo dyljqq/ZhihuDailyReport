@@ -12,17 +12,9 @@ import FSPagerView
 
 class MainViewController: BaseViewController, NextPageLoadable {
   
-  enum CellDataType {
-    case title(String)
-    case story(Story)
-    
-    var height: CGFloat {
-      switch self {
-      case .title: return 30
-      case .story: return 60
-      }
-    }
-  }
+  typealias DataType = MainStoryDataSource.CellDataType
+  
+  var dataSource: [DataType] = []
   
   fileprivate struct TitlePoint {
     let start: CGFloat
@@ -34,11 +26,7 @@ class MainViewController: BaseViewController, NextPageLoadable {
     }
   }
   
-  typealias DataType = CellDataType
-  
   let threshHold: CGFloat = screenWidth / 2
-  
-  var dataSource: [CellDataType] = []
   
   var nextPageState: NextPageState = NextPageState()
   var banners = [Story]()
@@ -92,7 +80,7 @@ class MainViewController: BaseViewController, NextPageLoadable {
     setupNavigationBar(by: 0)
   }
   
-  func performLoad(successHandler: @escaping ([CellDataType], Bool) -> (), failureHandler: @escaping (String) -> ()) {
+  func performLoad(successHandler: @escaping ([DataType], Bool) -> (), failureHandler: @escaping (String) -> ()) {
     if nextPageState.start == 0 {
       send(router: Router.lastNews) { [weak self] (storyList: StoryList?) in
         guard let strongSelf = self else { return }
@@ -131,22 +119,7 @@ class MainViewController: BaseViewController, NextPageLoadable {
   }
   
   func setDataSource() {
-    let cellFactory: (CellDataType) -> (UITableViewCell) = { [unowned self] type in
-      switch type {
-      case .title(let title):
-        let cell = self.tableView.dequeue() as TitleCell
-        cell.render(text: title)
-        return cell
-      case .story(let story):
-        let cell = self.tableView.dequeue() as StoryCell
-        cell.render(story: story)
-        return cell
-      }
-    }
-    let cellHeightClosure: (CellDataType) -> (CGFloat) = { type in
-      return type.height
-    }
-    let dataSource = ListDataSource<CellDataType>(items: self.dataSource, cellFactory: cellFactory, cellHeightClosure: cellHeightClosure)
+    let dataSource = MainStoryDataSource(items: self.dataSource)
     dataSource.scrollViewDidScrollClosure = { [unowned self] scrollView in
       self.setupNavigationBar(by: scrollView.contentOffset.y)
     }
@@ -181,11 +154,11 @@ extension MainViewController: FSPagerViewDelegate {
 }
 
 fileprivate extension MainViewController {
-  func config(storyList: StoryList, isStart: Bool = false) -> [CellDataType] {
-    var dataSource = storyList.stories.map { CellDataType.story($0) }
+  func config(storyList: StoryList, isStart: Bool = false) -> [DataType] {
+    var dataSource = storyList.stories.map { DataType.story($0) }
     
     if !isStart {
-      dataSource.insert(CellDataType.title(storyList.date.title), at: 0)
+      dataSource.insert(DataType.title(storyList.date.title), at: 0)
     }
     
     var start: CGFloat = 0
