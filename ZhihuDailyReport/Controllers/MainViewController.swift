@@ -10,6 +10,10 @@ import UIKit
 import SnapKit
 import FSPagerView
 
+fileprivate extension Selector {
+  static let menu = #selector(MainViewController.menuItemTapped)
+}
+
 class MainViewController: BaseViewController, NextPageLoadable {
   
   typealias DataType = MainStoryDataSource.CellDataType
@@ -106,6 +110,8 @@ class MainViewController: BaseViewController, NextPageLoadable {
     
     view.backgroundColor = Color.background
     
+    setLeftNavigationItem()
+    
     if #available(iOS 11, *) {
       tableView.contentInsetAdjustmentBehavior = .never
     }
@@ -124,6 +130,14 @@ class MainViewController: BaseViewController, NextPageLoadable {
       self.setupNavigationBar(by: scrollView.contentOffset.y)
     }
     currentDataSource = dataSource
+  }
+  
+  private func setLeftNavigationItem() {
+    self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_menu_black"), style: .plain, target: self, action: .menu)
+  }
+  
+  @objc func menuItemTapped() {
+    print("menu icon tapped")
   }
   
   deinit {}
