@@ -73,7 +73,7 @@ class MainViewController: BaseViewController {
   }
   
   private func setLeftNavigationItem() {
-    self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_menu_black"), style: .plain, target: self, action: .menu)
+    self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(imageName: .iconMenuBlack), style: .plain, target: self, action: .menu)
   }
   
   @objc func menuItemTapped() {

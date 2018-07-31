@@ -8,6 +8,7 @@
 
 import UIKit
 import FSPagerView
+import Kingfisher
 
 class MainStoryDataSource: NSObject, NextPageLoadable, APIClientable {
   
@@ -92,6 +93,10 @@ class MainStoryDataSource: NSObject, NextPageLoadable, APIClientable {
     tableView.delegate = self
     tableView.dataSource = self
     
+    if #available(iOS 10.0, *) {
+      tableView.prefetchDataSource = self
+    }
+ 
     tableView.addRefreshFooter { [weak self] refreshView in
       guard let strongSelf = self else { return }
       strongSelf.loadNext(start: strongSelf.nextPageState.start + 1, reloadView: strongSelf.tableView, refreshView: refreshView)
@@ -110,14 +115,20 @@ extension MainStoryDataSource: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let type = dataSource[indexPath.row]
     switch type {
+    case .title:
+      return tableView.dequeue() as TitleCell
+    case .story:
+      return tableView.dequeue() as StoryCell
+    }
+  }
+  
+  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    let type = dataSource[indexPath.row]
+    switch type {
     case .title(let title):
-      let cell = tableView.dequeue() as TitleCell
-      cell.render(text: title)
-      return cell
+      (cell as? TitleCell)?.render(text: title)
     case .story(let story):
-      let cell = tableView.dequeue() as StoryCell
-      cell.render(story: story)
-      return cell
+      (cell as? StoryCell)?.render(story: story)
     }
   }
 }
@@ -129,6 +140,18 @@ extension MainStoryDataSource: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
+  }
+}
+
+extension MainStoryDataSource: UITableViewDataSourcePrefetching {
+  func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+    let urls: [URL] = indexPaths.compactMap { indexPath in
+      if case DataType.story(let story) = self.dataSource[indexPath.row] {
+        return URL(string: story.image)
+      }
+      return nil
+    }
+    ImagePrefetcher(urls: urls).start()
   }
 }
 
