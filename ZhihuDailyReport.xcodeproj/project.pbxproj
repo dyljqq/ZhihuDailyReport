@@ -10,6 +10,7 @@
 		6D8DC922ACBD8243524C4242 /* Pods_ZhihuDailyReport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF62FCE880C1ADDE7202E06F /* Pods_ZhihuDailyReport.framework */; };
 		731D9F4C2073265D00F46D3B /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D9F4A2073265D00F46D3B /* TitleCell.swift */; };
 		731D9F4D2073265D00F46D3B /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731D9F4B2073265D00F46D3B /* TitleCell.xib */; };
+		734746992110358E005A0962 /* ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734746982110358E005A0962 /* ImageName.swift */; };
 		73ACC5D320BBB66C00F3356E /* ListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ACC5D220BBB66C00F3356E /* ListDataSource.swift */; };
 		73ACC5D820BD36D200F3356E /* MainStoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ACC5D720BD36D200F3356E /* MainStoryDataSource.swift */; };
 		73E29979206DEFFC00392C6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E29978206DEFFC00392C6A /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 		5EEC02AAD4AB3438FC8E1E3E /* Pods-ZhihuDailyReport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhihuDailyReport.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhihuDailyReport/Pods-ZhihuDailyReport.release.xcconfig"; sourceTree = "<group>"; };
 		731D9F4A2073265D00F46D3B /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		731D9F4B2073265D00F46D3B /* TitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
+		734746982110358E005A0962 /* ImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageName.swift; sourceTree = "<group>"; };
 		73ACC5D220BBB66C00F3356E /* ListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataSource.swift; sourceTree = "<group>"; };
 		73ACC5D720BD36D200F3356E /* MainStoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStoryDataSource.swift; sourceTree = "<group>"; };
 		73E29975206DEFFC00392C6A /* ZhihuDailyReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhihuDailyReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		734746972110357C005A0962 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				734746982110358E005A0962 /* ImageName.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		73ACC5D120BBB60700F3356E /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +148,7 @@
 		73E29977206DEFFC00392C6A /* ZhihuDailyReport */ = {
 			isa = PBXGroup;
 			children = (
+				734746972110357C005A0962 /* Resource */,
 				73ACC5D120BBB60700F3356E /* Adapter */,
 				73E299C3207227D100392C6A /* Refresh */,
 				73E299BC2071D95C00392C6A /* Consts */,
@@ -262,7 +273,6 @@
 				73E29972206DEFFC00392C6A /* Frameworks */,
 				73E29973206DEFFC00392C6A /* Resources */,
 				19880A038BEABF63F8B3EB0B /* [CP] Embed Pods Frameworks */,
-				BC48005066FA3CE31B3B2A21 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -355,21 +365,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZhihuDailyReport/Pods-ZhihuDailyReport-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BC48005066FA3CE31B3B2A21 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZhihuDailyReport/Pods-ZhihuDailyReport-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F4C8CCF675B555CA3C4E33E4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,6 +404,7 @@
 				73E299C720722AA600392C6A /* RefreshView.swift in Sources */,
 				73E2998D206DF05000392C6A /* APIClientable.swift in Sources */,
 				73E299C2207211AC00392C6A /* UIScrollView+Ext.swift in Sources */,
+				734746992110358E005A0962 /* ImageName.swift in Sources */,
 				73F3C4272078F35200926085 /* NavigationController.swift in Sources */,
 				73E299A7206E2A4F00392C6A /* UICollectionViewCell+Ext.swift in Sources */,
 				73F3C4292078FA2100926085 /* UINavigationBar+Ext.swift in Sources */,

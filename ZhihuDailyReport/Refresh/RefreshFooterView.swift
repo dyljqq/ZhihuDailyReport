@@ -22,7 +22,7 @@ class RefreshFooterView: RefreshView {
   
   lazy var arrowImageView: UIImageView = {
     let imageView = UIImageView(frame: CGRect.zero)
-    imageView.image = UIImage(named: "pull_arrow")
+    imageView.image = UIImage(imageName: .pullArrow)
     return imageView
   }()
   
