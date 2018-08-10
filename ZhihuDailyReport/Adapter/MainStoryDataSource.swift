@@ -201,8 +201,6 @@ extension MainStoryDataSource {
     let point = TitlePoint(start: start, end: start + end, title: isStart ? "今日热文" : storyList.date.title)
     points.append(point)
     
-    points.forEach { print($0.description) }
-    
     return dataSource
   }
   
