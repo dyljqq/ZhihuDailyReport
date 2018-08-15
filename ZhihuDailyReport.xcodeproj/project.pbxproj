@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6D8DC922ACBD8243524C4242 /* Pods_ZhihuDailyReport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF62FCE880C1ADDE7202E06F /* Pods_ZhihuDailyReport.framework */; };
+		7301E47D2123FDE100C4AAC2 /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7301E47C2123FDE100C4AAC2 /* DataRequest.swift */; };
 		731D9F4C2073265D00F46D3B /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D9F4A2073265D00F46D3B /* TitleCell.swift */; };
 		731D9F4D2073265D00F46D3B /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731D9F4B2073265D00F46D3B /* TitleCell.xib */; };
 		734746992110358E005A0962 /* ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734746982110358E005A0962 /* ImageName.swift */; };
@@ -19,7 +20,6 @@
 		73E29983206DEFFC00392C6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73E29981206DEFFC00392C6A /* LaunchScreen.storyboard */; };
 		73E2998D206DF05000392C6A /* APIClientable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2998C206DF05000392C6A /* APIClientable.swift */; };
 		73E2998F206E0EC500392C6A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2998E206E0EC500392C6A /* Router.swift */; };
-		73E29991206E14CB00392C6A /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E29990206E14CB00392C6A /* Decodable.swift */; };
 		73E29994206E153200392C6A /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E29993206E153200392C6A /* Story.swift */; };
 		73E29997206E171A00392C6A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E29996206E171A00392C6A /* BaseViewController.swift */; };
 		73E29999206E17D900392C6A /* StoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E29998206E17D900392C6A /* StoryList.swift */; };
@@ -49,6 +49,7 @@
 /* Begin PBXFileReference section */
 		51ED64C657FB42E96019A9A8 /* Pods-ZhihuDailyReport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhihuDailyReport.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhihuDailyReport/Pods-ZhihuDailyReport.debug.xcconfig"; sourceTree = "<group>"; };
 		5EEC02AAD4AB3438FC8E1E3E /* Pods-ZhihuDailyReport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhihuDailyReport.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhihuDailyReport/Pods-ZhihuDailyReport.release.xcconfig"; sourceTree = "<group>"; };
+		7301E47C2123FDE100C4AAC2 /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
 		731D9F4A2073265D00F46D3B /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		731D9F4B2073265D00F46D3B /* TitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
 		734746982110358E005A0962 /* ImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageName.swift; sourceTree = "<group>"; };
@@ -62,7 +63,6 @@
 		73E29984206DEFFC00392C6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73E2998C206DF05000392C6A /* APIClientable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientable.swift; sourceTree = "<group>"; };
 		73E2998E206E0EC500392C6A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		73E29990206E14CB00392C6A /* Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decodable.swift; sourceTree = "<group>"; };
 		73E29993206E153200392C6A /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		73E29996206E171A00392C6A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		73E29998206E17D900392C6A /* StoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryList.swift; sourceTree = "<group>"; };
@@ -206,6 +206,7 @@
 				73E299A8206E2BA500392C6A /* UICollectionView+Ext.swift */,
 				73E299BF2071D9DD00392C6A /* UIColor+Ext.swift */,
 				73F3C4282078FA2100926085 /* UINavigationBar+Ext.swift */,
+				7301E47C2123FDE100C4AAC2 /* DataRequest.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -216,7 +217,6 @@
 				73E2998C206DF05000392C6A /* APIClientable.swift */,
 				73E299AD206E2D0800392C6A /* NextPageLoadable.swift */,
 				73E299AF206E2FB000392C6A /* Reloadable.swift */,
-				73E29990206E14CB00392C6A /* Decodable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -402,13 +402,13 @@
 				731D9F4C2073265D00F46D3B /* TitleCell.swift in Sources */,
 				73E299AE206E2D0800392C6A /* NextPageLoadable.swift in Sources */,
 				73E299C720722AA600392C6A /* RefreshView.swift in Sources */,
+				7301E47D2123FDE100C4AAC2 /* DataRequest.swift in Sources */,
 				73E2998D206DF05000392C6A /* APIClientable.swift in Sources */,
 				73E299C2207211AC00392C6A /* UIScrollView+Ext.swift in Sources */,
 				734746992110358E005A0962 /* ImageName.swift in Sources */,
 				73F3C4272078F35200926085 /* NavigationController.swift in Sources */,
 				73E299A7206E2A4F00392C6A /* UICollectionViewCell+Ext.swift in Sources */,
 				73F3C4292078FA2100926085 /* UINavigationBar+Ext.swift in Sources */,
-				73E29991206E14CB00392C6A /* Decodable.swift in Sources */,
 				73E29979206DEFFC00392C6A /* AppDelegate.swift in Sources */,
 				73E299BE2071D96900392C6A /* Color.swift in Sources */,
 				73E299B0206E2FB000392C6A /* Reloadable.swift in Sources */,

@@ -9,24 +9,10 @@
 import Foundation
 import SwiftyJSON
 
-struct StoryList {
+struct StoryList: Decodable {
   
   let date: String
   let stories: [Story]
-  let topStories: [Story]
-  
-  init(_ json: JSON) {
-    self.date = json["date"].stringValue
-    self.stories = json["stories"].arrayValue.compactMap { Story($0) }
-    self.topStories = json["top_stories"].arrayValue.compactMap { Story($0) }
-  }
-  
-}
-
-extension StoryList: Decodable {
-  
-  static func parse(data: JSON) -> StoryList {
-    return StoryList(data)
-  }
+  var topStories: [TopStory]?
   
 }

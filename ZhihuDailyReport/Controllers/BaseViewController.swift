@@ -17,4 +17,4 @@ class BaseViewController: UIViewController {
 
 }
 
-extension BaseViewController: APIClientable {}
+extension BaseViewController: APIClient {}
