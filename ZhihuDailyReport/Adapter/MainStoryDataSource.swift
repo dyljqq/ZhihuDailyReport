@@ -10,7 +10,7 @@ import UIKit
 import FSPagerView
 import Kingfisher
 
-class MainStoryDataSource: NSObject, NextPageLoadable, APIClientable {
+class MainStoryDataSource: NSObject, NextPageLoadable, APIClient {
   
   enum CellDataType {
     case title(String)
@@ -39,7 +39,7 @@ class MainStoryDataSource: NSObject, NextPageLoadable, APIClientable {
   let bannerView: FSPagerView
   let tableView: UITableView
   
-  var banners = [Story]()
+  var banners = [TopStory]()
   var nextPageState: NextPageState = NextPageState()
   
   var dataSource: [DataType] = []
@@ -66,7 +66,7 @@ class MainStoryDataSource: NSObject, NextPageLoadable, APIClientable {
         guard let strongSelf = self else { return }
         guard let storyList = storyList else { return }
 
-        strongSelf.banners = storyList.topStories
+        strongSelf.banners = storyList.topStories ?? []
         strongSelf.bannerView.reloadData()
 
         successHandler(strongSelf.config(storyList: storyList, isStart: true), true)

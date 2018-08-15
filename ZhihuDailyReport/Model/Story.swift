@@ -9,29 +9,22 @@
 import Foundation
 import SwiftyJSON
 
-struct Story {
+struct Story: Decodable {
   
   let id: Int
   let title: String
   let type: Int
-  let image: String
-  let images: [String]
+  var images: [String] = []
   
-  init(_ json: JSON) {
-    self.id = json["id"].intValue
-    self.title = json["title"].stringValue
-    self.type = json["type"].intValue
-    self.images = json["images"].arrayValue.compactMap { $0.stringValue }
-    
-    self.image = self.images.isEmpty ? json["image"].stringValue : (self.images.first ?? "")
+  var image: String {
+    return images.first ?? ""
   }
   
 }
 
-extension Story: Decodable {
-  
-  static func parse(data: JSON) -> Story {
-    return Story(data)
-  }
-  
+struct TopStory: Decodable {
+  let id: Int
+  let title: String
+  let type: Int
+  let image: String
 }
