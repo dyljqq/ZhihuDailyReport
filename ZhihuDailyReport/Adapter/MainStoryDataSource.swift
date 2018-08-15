@@ -39,7 +39,7 @@ class MainStoryDataSource: NSObject, NextPageLoadable, APIClient {
   let bannerView: FSPagerView
   let tableView: UITableView
   
-  var banners = [TopStory]()
+  var banners = [Story]()
   var nextPageState: NextPageState = NextPageState()
   
   var dataSource: [DataType] = []

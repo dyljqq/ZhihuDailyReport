@@ -13,6 +13,6 @@ struct StoryList: Decodable {
   
   let date: String
   let stories: [Story]
-  var topStories: [TopStory]?
+  var topStories: [Story]?
   
 }
