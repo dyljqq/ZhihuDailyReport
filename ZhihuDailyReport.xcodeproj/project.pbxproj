@@ -46,6 +46,7 @@
 		73F3C4292078FA2100926085 /* UINavigationBar+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3C4282078FA2100926085 /* UINavigationBar+Ext.swift */; };
 		73FC4B4222116C6A00F3F443 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FC4B4122116C6A00F3F443 /* Coordinator.swift */; };
 		73FC4B4522116CD700F3F443 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FC4B4422116CD700F3F443 /* MainCoordinator.swift */; };
+		73FC4B4722117DA100F3F443 /* ParallaxHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FC4B4622117DA100F3F443 /* ParallaxHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		73F3C4282078FA2100926085 /* UINavigationBar+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Ext.swift"; sourceTree = "<group>"; };
 		73FC4B4122116C6A00F3F443 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		73FC4B4422116CD700F3F443 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		73FC4B4622117DA100F3F443 /* ParallaxHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxHeaderView.swift; sourceTree = "<group>"; };
 		BF62FCE880C1ADDE7202E06F /* Pods_ZhihuDailyReport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhihuDailyReport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -234,6 +236,7 @@
 				73E299B52071D68100392C6A /* StoryCell.xib */,
 				731D9F4A2073265D00F46D3B /* TitleCell.swift */,
 				731D9F4B2073265D00F46D3B /* TitleCell.xib */,
+				73FC4B4622117DA100F3F443 /* ParallaxHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				73E29979206DEFFC00392C6A /* AppDelegate.swift in Sources */,
 				73E299BE2071D96900392C6A /* Color.swift in Sources */,
 				73E299B0206E2FB000392C6A /* Reloadable.swift in Sources */,
+				73FC4B4722117DA100F3F443 /* ParallaxHeaderView.swift in Sources */,
 				73ACC5D820BD36D200F3356E /* MainStoryDataSource.swift in Sources */,
 				73E299AC206E2CD100392C6A /* NextPageState.swift in Sources */,
 				73E299A9206E2BA500392C6A /* UICollectionView+Ext.swift in Sources */,

@@ -25,15 +25,21 @@ class MainViewController: BaseViewController {
   lazy var bannerView: FSPagerView = {
     let bannerView = FSPagerView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: threshHold))
     bannerView.isInfinite = true
+    bannerView.automaticSlidingInterval = 5
     bannerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: FSPagerViewCell.className)
     return bannerView
+  }()
+  
+  lazy var headerView: ParallaxHeaderView = {
+    let headerView = ParallaxHeaderView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: threshHold), subView: self.bannerView)
+    return headerView
   }()
   
   lazy var tableView: UITableView = {
     let tableView = UITableView(frame: CGRect.zero)
     tableView.tableFooterView = UIView()
     tableView.backgroundColor = Color.background
-    tableView.tableHeaderView = self.bannerView
+    tableView.tableHeaderView = self.headerView
     tableView.showsVerticalScrollIndicator = false
     
     TitleCell.registerNib(tableView)
@@ -66,8 +72,19 @@ class MainViewController: BaseViewController {
       make.edges.equalToSuperview()
     }
     
+    headerView.stopClosure = { [unowned self] maxOffsetY in
+      self.tableView.contentOffset.y = maxOffsetY
+    }
+    
     mainDataSource.scrollViewDidScrollClosure = { [unowned self] scrollView in
-      self.setupNavigationBar(by: scrollView.contentOffset.y)
+      let offsetY = scrollView.contentOffset.y
+      if offsetY < 0 {
+        if let headerView = self.tableView.tableHeaderView as? ParallaxHeaderView {
+          headerView.layoutView(offset: scrollView.contentOffset)
+        }
+      } else {
+        self.setupNavigationBar(by: offsetY)
+      }
     }
     
     mainDataSource.cellSelectedClosure = { [weak self] story in
