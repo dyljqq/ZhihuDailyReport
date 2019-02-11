@@ -12,7 +12,7 @@ let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height
 
 var navigationBarHeight: CGFloat {
-  return UIScreen.main.bounds.height == 812 ? 88 : 64
+  return UIScreen.main.bounds.height >= 812 ? 88 : 64
 }
 
 var mainWindow: UIWindow? {

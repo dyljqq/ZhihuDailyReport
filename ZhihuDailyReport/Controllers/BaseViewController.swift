@@ -10,9 +10,10 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+  weak var coordinator: MainCoordinator?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
   }
 
 }

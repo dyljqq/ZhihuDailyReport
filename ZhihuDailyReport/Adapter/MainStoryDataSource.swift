@@ -45,6 +45,7 @@ class MainStoryDataSource: NSObject, NextPageLoadable, APIClient {
   var dataSource: [DataType] = []
   
   var scrollViewDidScrollClosure: ((UIScrollView) -> ())?
+  var cellSelectedClosure: ((Story) -> Void)?
   
   fileprivate var points: [TitlePoint] = []
   
@@ -140,6 +141,10 @@ extension MainStoryDataSource: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
+    let data = self.dataSource[indexPath.row]
+    if case CellDataType.story(let story) = data {
+      cellSelectedClosure?(story)
+    }
   }
 }
 
