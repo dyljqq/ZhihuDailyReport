@@ -12,18 +12,22 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
+  var coordinator: MainCoordinator?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let navigationController = storyboard.instantiateViewController(withIdentifier: "navigationController") as? NavigationController
-    
-    window?.backgroundColor = UIColor.white
-    window?.rootViewController = navigationController
-    window?.makeKeyAndVisible()
-    
-    configNavigationBar()
+    if let navigationController = storyboard.instantiateViewController(withIdentifier: "navigationController") as? NavigationController {
+      coordinator = MainCoordinator(navigationController)
+      coordinator?.start()
+      
+      window?.backgroundColor = UIColor.white
+      window?.rootViewController = navigationController
+      window?.makeKeyAndVisible()
+      
+      configNavigationBar()
+    }
     
     return true
   }

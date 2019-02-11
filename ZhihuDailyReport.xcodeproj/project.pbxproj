@@ -44,6 +44,8 @@
 		73F3C4252078F2F600926085 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3C4242078F2F600926085 /* Consts.swift */; };
 		73F3C4272078F35200926085 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3C4262078F35200926085 /* NavigationController.swift */; };
 		73F3C4292078FA2100926085 /* UINavigationBar+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3C4282078FA2100926085 /* UINavigationBar+Ext.swift */; };
+		73FC4B4222116C6A00F3F443 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FC4B4122116C6A00F3F443 /* Coordinator.swift */; };
+		73FC4B4522116CD700F3F443 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FC4B4422116CD700F3F443 /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +89,8 @@
 		73F3C4242078F2F600926085 /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		73F3C4262078F35200926085 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		73F3C4282078FA2100926085 /* UINavigationBar+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Ext.swift"; sourceTree = "<group>"; };
+		73FC4B4122116C6A00F3F443 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		73FC4B4422116CD700F3F443 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		BF62FCE880C1ADDE7202E06F /* Pods_ZhihuDailyReport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhihuDailyReport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -148,6 +152,7 @@
 		73E29977206DEFFC00392C6A /* ZhihuDailyReport */ = {
 			isa = PBXGroup;
 			children = (
+				73FC4B4322116CC600F3F443 /* utils */,
 				734746972110357C005A0962 /* Resource */,
 				73ACC5D120BBB60700F3356E /* Adapter */,
 				73E299C3207227D100392C6A /* Refresh */,
@@ -217,6 +222,7 @@
 				73E2998C206DF05000392C6A /* APIClient.swift */,
 				73E299AD206E2D0800392C6A /* NextPageLoadable.swift */,
 				73E299AF206E2FB000392C6A /* Reloadable.swift */,
+				73FC4B4122116C6A00F3F443 /* Coordinator.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -250,6 +256,14 @@
 				73E299C1207211AC00392C6A /* UIScrollView+Ext.swift */,
 			);
 			path = Refresh;
+			sourceTree = "<group>";
+		};
+		73FC4B4322116CC600F3F443 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				73FC4B4422116CD700F3F443 /* MainCoordinator.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		DBCD9FD06E39038EAC0D4DC1 /* Pods */ = {
@@ -406,6 +420,8 @@
 				73E2998D206DF05000392C6A /* APIClient.swift in Sources */,
 				73E299C2207211AC00392C6A /* UIScrollView+Ext.swift in Sources */,
 				734746992110358E005A0962 /* ImageName.swift in Sources */,
+				73FC4B4522116CD700F3F443 /* MainCoordinator.swift in Sources */,
+				73FC4B4222116C6A00F3F443 /* Coordinator.swift in Sources */,
 				73F3C4272078F35200926085 /* NavigationController.swift in Sources */,
 				73E299A7206E2A4F00392C6A /* UICollectionViewCell+Ext.swift in Sources */,
 				73F3C4292078FA2100926085 /* UINavigationBar+Ext.swift in Sources */,

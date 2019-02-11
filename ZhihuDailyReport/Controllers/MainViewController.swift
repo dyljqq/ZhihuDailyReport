@@ -70,6 +70,14 @@ class MainViewController: BaseViewController {
       self.setupNavigationBar(by: scrollView.contentOffset.y)
     }
     
+    mainDataSource.cellSelectedClosure = { [weak self] story in
+      guard let weakSelf = self else {
+        return
+      }
+      print("story: \(story)")
+      weakSelf.coordinator?.pushDetailStoryViewController(storyId: story.id)
+    }
+    
   }
   
   private func setLeftNavigationItem() {

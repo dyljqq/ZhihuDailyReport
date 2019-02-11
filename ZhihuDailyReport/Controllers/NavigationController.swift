@@ -26,13 +26,7 @@ class NavigationController: UINavigationController {
   }
   
   func hideShadowImage() {
-    for view in self.navigationBar.subviews {
-      for v in view.subviews {
-        if v.classForCoder == UIImageView.classForCoder() {
-          v.isHidden = true
-        }
-      }
-    }
+    self.navigationBar.shadowImage = UIImage()
   }
   
 }
