@@ -295,7 +295,7 @@
 				TargetAttributes = {
 					73E29974206DEFFC00392C6A = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -558,12 +558,15 @@
 			baseConfigurationReference = 51ED64C657FB42E96019A9A8 /* Pods-ZhihuDailyReport.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U4Y29F8CZ3;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 25F53AGSR9;
 				INFOPLIST_FILE = ZhihuDailyReport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dyljqq.ZhihuDailyReport;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lukou.youxuan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "134df9cc-d3fc-4858-a489-7353eb4cb7e6";
+				PROVISIONING_PROFILE_SPECIFIER = panpanDev;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -574,12 +577,15 @@
 			baseConfigurationReference = 5EEC02AAD4AB3438FC8E1E3E /* Pods-ZhihuDailyReport.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U4Y29F8CZ3;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 25F53AGSR9;
 				INFOPLIST_FILE = ZhihuDailyReport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dyljqq.ZhihuDailyReport;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lukou.youxuan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "134df9cc-d3fc-4858-a489-7353eb4cb7e6";
+				PROVISIONING_PROFILE_SPECIFIER = panpanDev;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

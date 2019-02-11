@@ -87,6 +87,6 @@ class MainViewController: BaseViewController {
 fileprivate extension MainViewController {
   func setupNavigationBar(by offsetY: CGFloat) {
     let alpha = min(1, offsetY / (threshHold + navigationBarHeight))
-    self.navigationController?.navigationBar.lk_setBackgroundColor(backgroundColor: Color.navigation.withAlphaComponent(alpha))
+    self.navigationController?.navigationBar.djsetBackgroundColor(backgroundColor: Color.navigation.withAlphaComponent(alpha))
   }
 }

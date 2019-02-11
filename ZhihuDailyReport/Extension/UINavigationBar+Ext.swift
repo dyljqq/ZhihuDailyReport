@@ -53,14 +53,16 @@ extension UINavigationBar {
 }
 
 extension UINavigationBar {
-  func lk_setTitleColor(color: UIColor) {
+  func djsetTitleColor(color: UIColor) {
     self.titleTextAttributes = [NSAttributedStringKey.foregroundColor: color]
   }
   
-  func lk_setBackgroundColor(backgroundColor: UIColor) {
+  func djsetBackgroundColor(backgroundColor: UIColor) {
     if overlay == nil {
       translucent = self.isTranslucent
       color = self.backgroundColor
+
+      self.shadowImage = UIImage()
       self.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
       self.isTranslucent = true
       self.backgroundColor = UIColor.clear
@@ -80,11 +82,11 @@ extension UINavigationBar {
     let _ = mainNavigationController.popViewController(animated: true)
   }
   
-  func lk_setTranslationY(translationY: CGFloat) {
+  func djsetTranslationY(translationY: CGFloat) {
     transform = CGAffineTransform(translationX: 0, y: translationY)
   }
   
-  func lk_setElementAlpha(alpha: CGFloat) {
+  func djsetElementAlpha(alpha: CGFloat) {
     for (_, element) in subviews.enumerated() {
       if #available(iOS 11.0, *) {
         if element.isKind(of: NSClassFromString("_UINavigationBarLargeTitleView") as! UIView.Type) ||
@@ -119,8 +121,8 @@ extension UINavigationBar {
     })
   }
   
-  func lk_reset() {
-    lk_setElementAlpha(alpha: 1.0)
+  func djreset() {
+    djsetElementAlpha(alpha: 1.0)
     setBackgroundImage(nil, for: UIBarMetrics.default)
     overlay?.removeFromSuperview()
     overlay = nil
