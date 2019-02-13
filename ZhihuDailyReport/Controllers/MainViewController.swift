@@ -76,7 +76,8 @@ class MainViewController: BaseViewController {
       self.tableView.contentOffset.y = maxOffsetY
     }
     
-    mainDataSource.scrollViewDidScrollClosure = { [unowned self] scrollView in
+    mainDataSource.scrollViewDidScrollClosure = { [unowned self] scrollView, point in
+      self.title = point?.title ?? "今日热文"
       let offsetY = scrollView.contentOffset.y
       if offsetY < 0 {
         if let headerView = self.tableView.tableHeaderView as? ParallaxHeaderView {
