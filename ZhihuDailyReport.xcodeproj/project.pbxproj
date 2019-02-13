@@ -12,6 +12,8 @@
 		731D9F4C2073265D00F46D3B /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D9F4A2073265D00F46D3B /* TitleCell.swift */; };
 		731D9F4D2073265D00F46D3B /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731D9F4B2073265D00F46D3B /* TitleCell.xib */; };
 		734746992110358E005A0962 /* ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734746982110358E005A0962 /* ImageName.swift */; };
+		7359D1F0221409EB00BD5392 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7359D1EF221409EB00BD5392 /* CircleProgressView.swift */; };
+		7359D1F32214102900BD5392 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7359D1F22214102900BD5392 /* TitleView.swift */; };
 		73ACC5D320BBB66C00F3356E /* ListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ACC5D220BBB66C00F3356E /* ListDataSource.swift */; };
 		73ACC5D820BD36D200F3356E /* MainStoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ACC5D720BD36D200F3356E /* MainStoryDataSource.swift */; };
 		73E29979206DEFFC00392C6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E29978206DEFFC00392C6A /* AppDelegate.swift */; };
@@ -56,6 +58,8 @@
 		731D9F4A2073265D00F46D3B /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		731D9F4B2073265D00F46D3B /* TitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
 		734746982110358E005A0962 /* ImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageName.swift; sourceTree = "<group>"; };
+		7359D1EF221409EB00BD5392 /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
+		7359D1F22214102900BD5392 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		73ACC5D220BBB66C00F3356E /* ListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataSource.swift; sourceTree = "<group>"; };
 		73ACC5D720BD36D200F3356E /* MainStoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStoryDataSource.swift; sourceTree = "<group>"; };
 		73E29975206DEFFC00392C6A /* ZhihuDailyReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhihuDailyReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +128,14 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		7359D1F122140A1600BD5392 /* Weidget */ = {
+			isa = PBXGroup;
+			children = (
+				7359D1EF221409EB00BD5392 /* CircleProgressView.swift */,
+			);
+			path = Weidget;
+			sourceTree = "<group>";
+		};
 		73ACC5D120BBB60700F3356E /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +166,7 @@
 		73E29977206DEFFC00392C6A /* ZhihuDailyReport */ = {
 			isa = PBXGroup;
 			children = (
+				7359D1F122140A1600BD5392 /* Weidget */,
 				73FC4B4322116CC600F3F443 /* utils */,
 				734746972110357C005A0962 /* Resource */,
 				73ACC5D120BBB60700F3356E /* Adapter */,
@@ -237,6 +250,7 @@
 				731D9F4A2073265D00F46D3B /* TitleCell.swift */,
 				731D9F4B2073265D00F46D3B /* TitleCell.xib */,
 				73FC4B4622117DA100F3F443 /* ParallaxHeaderView.swift */,
+				7359D1F22214102900BD5392 /* TitleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -430,6 +444,7 @@
 				73F3C4292078FA2100926085 /* UINavigationBar+Ext.swift in Sources */,
 				73E29979206DEFFC00392C6A /* AppDelegate.swift in Sources */,
 				73E299BE2071D96900392C6A /* Color.swift in Sources */,
+				7359D1F32214102900BD5392 /* TitleView.swift in Sources */,
 				73E299B0206E2FB000392C6A /* Reloadable.swift in Sources */,
 				73FC4B4722117DA100F3F443 /* ParallaxHeaderView.swift in Sources */,
 				73ACC5D820BD36D200F3356E /* MainStoryDataSource.swift in Sources */,
@@ -441,6 +456,7 @@
 				73E299C5207227E500392C6A /* Refreshable.swift in Sources */,
 				73E29994206E153200392C6A /* Story.swift in Sources */,
 				73E29999206E17D900392C6A /* StoryList.swift in Sources */,
+				7359D1F0221409EB00BD5392 /* CircleProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

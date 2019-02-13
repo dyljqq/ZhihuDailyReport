@@ -46,6 +46,8 @@ class MainStoryDataSource: NSObject, NextPageLoadable, APIClient {
   
   var scrollViewDidScrollClosure: ((UIScrollView, TitlePoint?) -> ())?
   var cellSelectedClosure: ((Story) -> Void)?
+  var scrollViewDidEndDraggingClosure: ((CGFloat) -> Void)?
+  var loadDataFinished: (() -> Void)?
   
   fileprivate var points: [TitlePoint] = []
   
@@ -76,6 +78,7 @@ class MainStoryDataSource: NSObject, NextPageLoadable, APIClient {
     } else {
       send(router: Router.oldStories(Date.diff(day: -Double(nextPageState.start - 1)))) { [weak self] (storyList: StoryList?) in
         guard let strongSelf = self else { return }
+        strongSelf.loadDataFinished?()
         guard let storyList = storyList else { return }
 
         successHandler(strongSelf.config(storyList: storyList), true)
@@ -173,6 +176,10 @@ extension MainStoryDataSource: UIScrollViewDelegate {
       }
       closure(scrollView, p)
     }
+  }
+  
+  func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    scrollViewDidEndDraggingClosure?(scrollView.contentOffset.y)
   }
 }
 

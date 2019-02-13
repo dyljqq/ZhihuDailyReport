@@ -22,6 +22,11 @@ class MainViewController: BaseViewController {
   
   let threshHold: CGFloat = screenWidth / 2
   
+  lazy var titleView: TitleView = {
+    let titleView = TitleView(frame: CGRect(x: 0, y: 0, width: 150, height: 25))
+    return titleView
+  }()
+  
   lazy var bannerView: FSPagerView = {
     let bannerView = FSPagerView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: threshHold))
     bannerView.isInfinite = true
@@ -56,12 +61,12 @@ class MainViewController: BaseViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
+    navigationItem.titleView = self.titleView
     setupNavigationBar(by: 0)
   }
   
   private func setup() {
-    title = "今日热文"
-    
+    self.titleView.render(title: "今日热文")
     view.backgroundColor = Color.background
     
     setLeftNavigationItem()
@@ -77,14 +82,31 @@ class MainViewController: BaseViewController {
     }
     
     mainDataSource.scrollViewDidScrollClosure = { [unowned self] scrollView, point in
-      self.title = point?.title ?? "今日热文"
+      self.titleView.render(title: point?.title ?? "今日热文")
       let offsetY = scrollView.contentOffset.y
       if offsetY < 0 {
         if let headerView = self.tableView.tableHeaderView as? ParallaxHeaderView {
           headerView.layoutView(offset: scrollView.contentOffset)
         }
+        let progress = -offsetY / (navigationBarHeight + 30)
+        if progress > 0.01 && !self.mainDataSource.nextPageState.isLoading {
+          self.titleView.showProgressView()
+        } else {
+          self.titleView.hideProgressView()
+        }
+        self.titleView.progress = Int(progress * 100)
       } else {
         self.setupNavigationBar(by: offsetY)
+      }
+    }
+    
+    mainDataSource.scrollViewDidEndDraggingClosure = { [unowned self] offsetY in
+      let progress = -offsetY / (navigationBarHeight + 30)
+      if progress >= 1 {
+        self.titleView.showIndicatorView()
+        self.mainDataSource.loadNext(start: 0)
+      } else {
+        self.titleView.hideProgressView()
       }
     }
     
@@ -94,6 +116,10 @@ class MainViewController: BaseViewController {
       }
       print("story: \(story)")
       weakSelf.coordinator?.pushDetailStoryViewController(storyId: story.id)
+    }
+    
+    mainDataSource.loadDataFinished = { [unowned self] in
+      self.titleView.hideIndicatorView()
     }
     
   }
