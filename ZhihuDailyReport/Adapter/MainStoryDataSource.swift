@@ -24,7 +24,7 @@ class MainStoryDataSource: NSObject, NextPageLoadable, APIClient {
     }
   }
   
-  fileprivate struct TitlePoint {
+  struct TitlePoint {
     let start: CGFloat
     let end: CGFloat
     let title: String
@@ -44,8 +44,10 @@ class MainStoryDataSource: NSObject, NextPageLoadable, APIClient {
   
   var dataSource: [DataType] = []
   
-  var scrollViewDidScrollClosure: ((UIScrollView) -> ())?
+  var scrollViewDidScrollClosure: ((UIScrollView, TitlePoint?) -> ())?
   var cellSelectedClosure: ((Story) -> Void)?
+  var scrollViewDidEndDraggingClosure: ((CGFloat) -> Void)?
+  var loadDataFinished: (() -> Void)?
   
   fileprivate var points: [TitlePoint] = []
   
@@ -76,6 +78,7 @@ class MainStoryDataSource: NSObject, NextPageLoadable, APIClient {
     } else {
       send(router: Router.oldStories(Date.diff(day: -Double(nextPageState.start - 1)))) { [weak self] (storyList: StoryList?) in
         guard let strongSelf = self else { return }
+        strongSelf.loadDataFinished?()
         guard let storyList = storyList else { return }
 
         successHandler(strongSelf.config(storyList: storyList), true)
@@ -163,8 +166,20 @@ extension MainStoryDataSource: UITableViewDataSourcePrefetching {
 extension MainStoryDataSource: UIScrollViewDelegate {
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     if let closure = scrollViewDidScrollClosure {
-      closure(scrollView)
+      let offsetY = scrollView.contentOffset.y
+      var p: TitlePoint? = nil
+      for point in points {
+        if point.start <= offsetY && point.end > offsetY {
+          p = point
+          break
+        }
+      }
+      closure(scrollView, p)
     }
+  }
+  
+  func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    scrollViewDidEndDraggingClosure?(scrollView.contentOffset.y)
   }
 }
 
@@ -195,13 +210,14 @@ extension MainStoryDataSource {
   func config(storyList: StoryList, isStart: Bool = false) -> [DataType] {
     var dataSource = storyList.stories.map { DataType.story($0) }
     
+    let start: CGFloat = points.last?.end ?? navigationBarHeight
+    var end: CGFloat = 0
     if !isStart {
       dataSource.insert(DataType.title(storyList.date.title), at: 0)
+    } else {
+      points = []
     }
-    
-    var start: CGFloat = 0
-    var end: CGFloat = 0
-    self.dataSource.forEach { start += $0.height }
+
     dataSource.forEach { end += $0.height }
     let point = TitlePoint(start: start, end: start + end, title: isStart ? "今日热文" : storyList.date.title)
     points.append(point)
