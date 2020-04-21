@@ -16,8 +16,6 @@
 		7359D1F32214102900BD5392 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7359D1F22214102900BD5392 /* TitleView.swift */; };
 		73ACC5D320BBB66C00F3356E /* ListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ACC5D220BBB66C00F3356E /* ListDataSource.swift */; };
 		73ACC5D820BD36D200F3356E /* MainStoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ACC5D720BD36D200F3356E /* MainStoryDataSource.swift */; };
-		73BCBF0D242DE54000DEAD6D /* swiftPackages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EF3804242DD4E1009476ED /* swiftPackages.framework */; };
-		73BCBF0E242DE54000DEAD6D /* swiftPackages.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73EF3804242DD4E1009476ED /* swiftPackages.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		73E29979206DEFFC00392C6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E29978206DEFFC00392C6A /* AppDelegate.swift */; };
 		73E2997E206DEFFC00392C6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73E2997C206DEFFC00392C6A /* Main.storyboard */; };
 		73E29980206DEFFC00392C6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73E2997F206DEFFC00392C6A /* Assets.xcassets */; };
@@ -69,20 +67,6 @@
 			remoteInfo = swiftPackagesTests;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		73BCBF0F242DE54000DEAD6D /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				73BCBF0E242DE54000DEAD6D /* swiftPackages.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		51ED64C657FB42E96019A9A8 /* Pods-ZhihuDailyReport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhihuDailyReport.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhihuDailyReport/Pods-ZhihuDailyReport.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,7 +124,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D8DC922ACBD8243524C4242 /* Pods_ZhihuDailyReport.framework in Frameworks */,
-				73BCBF0D242DE54000DEAD6D /* swiftPackages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +332,6 @@
 				73E29972206DEFFC00392C6A /* Frameworks */,
 				73E29973206DEFFC00392C6A /* Resources */,
 				19880A038BEABF63F8B3EB0B /* [CP] Embed Pods Frameworks */,
-				73BCBF0F242DE54000DEAD6D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -372,7 +354,7 @@
 				TargetAttributes = {
 					73E29974206DEFFC00392C6A = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -663,16 +645,16 @@
 			baseConfigurationReference = 51ED64C657FB42E96019A9A8 /* Pods-ZhihuDailyReport.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25F53AGSR9;
 				INFOPLIST_FILE = ZhihuDailyReport/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lukou.youxuan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dyljqq.zhihu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "134df9cc-d3fc-4858-a489-7353eb4cb7e6";
-				PROVISIONING_PROFILE_SPECIFIER = panpanDev;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -683,16 +665,16 @@
 			baseConfigurationReference = 5EEC02AAD4AB3438FC8E1E3E /* Pods-ZhihuDailyReport.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25F53AGSR9;
 				INFOPLIST_FILE = ZhihuDailyReport/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lukou.youxuan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dyljqq.zhihu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "134df9cc-d3fc-4858-a489-7353eb4cb7e6";
-				PROVISIONING_PROFILE_SPECIFIER = panpanDev;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

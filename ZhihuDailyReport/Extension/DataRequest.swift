@@ -14,6 +14,7 @@ extension DataRequest {
   private static func decodableObjectSerialize<T: Decodable>(_ decoder: JSONDecoder) -> DataResponseSerializer<T> {
     return DataResponseSerializer { _, response, data, error in
       if let error = error {
+        print("error: \(error)")
         return .failure(error)
       }
       return decodeToObject(decoder: decoder, response: response, data: data)
