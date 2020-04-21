@@ -155,7 +155,7 @@ extension MainStoryDataSource: UITableViewDataSourcePrefetching {
   func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
     let urls: [URL] = indexPaths.compactMap { indexPath in
       if case DataType.story(let story) = self.dataSource[indexPath.row] {
-        return URL(string: story.image)
+        return URL(string: story.imageUrl)
       }
       return nil
     }
@@ -193,7 +193,7 @@ extension MainStoryDataSource: FSPagerViewDataSource {
     let banner = banners[index]
     cell.imageView?.clipsToBounds = true
     cell.imageView?.contentMode = .scaleAspectFill
-    cell.imageView?.kf.setImage(with: URL(string: banner.image))
+    cell.imageView?.kf.setImage(with: URL(string: banner.imageUrl))
     return cell
   }
 }

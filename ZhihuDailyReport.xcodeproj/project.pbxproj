@@ -51,6 +51,23 @@
 		73FC4B4722117DA100F3F443 /* ParallaxHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FC4B4622117DA100F3F443 /* ParallaxHeaderView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		73EF3803242DD4E1009476ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73EF37FC242DD4E1009476ED /* swiftPackages.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "swiftPackages::swiftPackages::Product";
+			remoteInfo = swiftPackages;
+		};
+		73EF3805242DD4E1009476ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73EF37FC242DD4E1009476ED /* swiftPackages.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "swiftPackages::swiftPackagesTests::Product";
+			remoteInfo = swiftPackagesTests;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		51ED64C657FB42E96019A9A8 /* Pods-ZhihuDailyReport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhihuDailyReport.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhihuDailyReport/Pods-ZhihuDailyReport.debug.xcconfig"; sourceTree = "<group>"; };
 		5EEC02AAD4AB3438FC8E1E3E /* Pods-ZhihuDailyReport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhihuDailyReport.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhihuDailyReport/Pods-ZhihuDailyReport.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +108,7 @@
 		73E299C4207227E500392C6A /* Refreshable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refreshable.swift; sourceTree = "<group>"; };
 		73E299C620722AA600392C6A /* RefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshView.swift; sourceTree = "<group>"; };
 		73E299C82072336000392C6A /* RefreshFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshFooterView.swift; sourceTree = "<group>"; };
+		73EF37FC242DD4E1009476ED /* swiftPackages.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = swiftPackages.xcodeproj; path = swiftPackages/swiftPackages.xcodeproj; sourceTree = "<group>"; };
 		73F3C4242078F2F600926085 /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		73F3C4262078F35200926085 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		73F3C4282078FA2100926085 /* UINavigationBar+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Ext.swift"; sourceTree = "<group>"; };
@@ -115,6 +133,7 @@
 		5AF75A837CB30FACB435A46A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				73EF37FC242DD4E1009476ED /* swiftPackages.xcodeproj */,
 				BF62FCE880C1ADDE7202E06F /* Pods_ZhihuDailyReport.framework */,
 			);
 			name = Frameworks;
@@ -275,6 +294,15 @@
 			path = Refresh;
 			sourceTree = "<group>";
 		};
+		73EF37FD242DD4E1009476ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				73EF3804242DD4E1009476ED /* swiftPackages.framework */,
+				73EF3806242DD4E1009476ED /* swiftPackagesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		73FC4B4322116CC600F3F443 /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,7 +354,7 @@
 				TargetAttributes = {
 					73E29974206DEFFC00392C6A = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -341,12 +369,35 @@
 			mainGroup = 73E2996C206DEFFC00392C6A;
 			productRefGroup = 73E29976206DEFFC00392C6A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 73EF37FD242DD4E1009476ED /* Products */;
+					ProjectRef = 73EF37FC242DD4E1009476ED /* swiftPackages.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				73E29974206DEFFC00392C6A /* ZhihuDailyReport */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		73EF3804242DD4E1009476ED /* swiftPackages.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = swiftPackages.framework;
+			remoteRef = 73EF3803242DD4E1009476ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		73EF3806242DD4E1009476ED /* swiftPackagesTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = file;
+			path = swiftPackagesTests.xctest;
+			remoteRef = 73EF3805242DD4E1009476ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		73E29973206DEFFC00392C6A /* Resources */ = {
@@ -594,15 +645,16 @@
 			baseConfigurationReference = 51ED64C657FB42E96019A9A8 /* Pods-ZhihuDailyReport.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25F53AGSR9;
 				INFOPLIST_FILE = ZhihuDailyReport/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lukou.youxuan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dyljqq.zhihu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "134df9cc-d3fc-4858-a489-7353eb4cb7e6";
-				PROVISIONING_PROFILE_SPECIFIER = panpanDev;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -613,15 +665,16 @@
 			baseConfigurationReference = 5EEC02AAD4AB3438FC8E1E3E /* Pods-ZhihuDailyReport.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25F53AGSR9;
 				INFOPLIST_FILE = ZhihuDailyReport/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lukou.youxuan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dyljqq.zhihu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "134df9cc-d3fc-4858-a489-7353eb4cb7e6";
-				PROVISIONING_PROFILE_SPECIFIER = panpanDev;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       window?.makeKeyAndVisible()
       
       configNavigationBar()
+      
     }
     
     return true
