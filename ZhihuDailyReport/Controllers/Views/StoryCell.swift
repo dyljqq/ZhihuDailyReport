@@ -20,7 +20,7 @@ class StoryCell: UITableViewCell {
   
   func render(story: Story) {
     titleLabel.text = story.title
-    coverImageView.kf.setImage(with: URL(string: story.image))
+    coverImageView.kf.setImage(with: URL(string: story.imageUrl))
   }
     
 }

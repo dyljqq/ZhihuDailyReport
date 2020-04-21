@@ -11,37 +11,19 @@ import SwiftyJSON
 
 struct Story: Decodable {
   
-  let id: Int
-  let title: String
-  let type: Int
-  let image: String
-  let images: [String]
+  var id: Int
+  var title: String
+  var type: Int
+  var hint: String
+  var image: String?
+  var images: [String]?
   
-  init(from decoder: Decoder) throws {
-    let container = try decoder.container(keyedBy: CodingKeys.self)
-    
-    self.id = try container.decode(Int.self, forKey: .id)
-    self.title = try container.decode(String.self, forKey: .title)
-    self.type = try container.decode(Int.self, forKey: .type)
-    if let images = try? container.decode([String].self, forKey: .images) {
-      self.images = images
-    } else {
-      self.images = []
+  var imageUrl: String {
+    if let image = self.image {
+      return image
     }
-    
-    if let image = try? container.decode(String.self, forKey: .image) {
-      self.image = image
-    } else {
-      self.image = self.images.first ?? ""
-    }
-  }
-  
-  private enum CodingKeys: String, CodingKey {
-    case id
-    case title
-    case type
-    case image
-    case images
+    return self.images?.first ?? ""
   }
   
 }
+

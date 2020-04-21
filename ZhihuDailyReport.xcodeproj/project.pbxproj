@@ -16,6 +16,8 @@
 		7359D1F32214102900BD5392 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7359D1F22214102900BD5392 /* TitleView.swift */; };
 		73ACC5D320BBB66C00F3356E /* ListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ACC5D220BBB66C00F3356E /* ListDataSource.swift */; };
 		73ACC5D820BD36D200F3356E /* MainStoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ACC5D720BD36D200F3356E /* MainStoryDataSource.swift */; };
+		73BCBF0D242DE54000DEAD6D /* swiftPackages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EF3804242DD4E1009476ED /* swiftPackages.framework */; };
+		73BCBF0E242DE54000DEAD6D /* swiftPackages.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73EF3804242DD4E1009476ED /* swiftPackages.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		73E29979206DEFFC00392C6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E29978206DEFFC00392C6A /* AppDelegate.swift */; };
 		73E2997E206DEFFC00392C6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73E2997C206DEFFC00392C6A /* Main.storyboard */; };
 		73E29980206DEFFC00392C6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73E2997F206DEFFC00392C6A /* Assets.xcassets */; };
@@ -50,6 +52,37 @@
 		73FC4B4522116CD700F3F443 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FC4B4422116CD700F3F443 /* MainCoordinator.swift */; };
 		73FC4B4722117DA100F3F443 /* ParallaxHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FC4B4622117DA100F3F443 /* ParallaxHeaderView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		73EF3803242DD4E1009476ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73EF37FC242DD4E1009476ED /* swiftPackages.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "swiftPackages::swiftPackages::Product";
+			remoteInfo = swiftPackages;
+		};
+		73EF3805242DD4E1009476ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73EF37FC242DD4E1009476ED /* swiftPackages.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "swiftPackages::swiftPackagesTests::Product";
+			remoteInfo = swiftPackagesTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		73BCBF0F242DE54000DEAD6D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				73BCBF0E242DE54000DEAD6D /* swiftPackages.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		51ED64C657FB42E96019A9A8 /* Pods-ZhihuDailyReport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhihuDailyReport.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhihuDailyReport/Pods-ZhihuDailyReport.debug.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +124,7 @@
 		73E299C4207227E500392C6A /* Refreshable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refreshable.swift; sourceTree = "<group>"; };
 		73E299C620722AA600392C6A /* RefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshView.swift; sourceTree = "<group>"; };
 		73E299C82072336000392C6A /* RefreshFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshFooterView.swift; sourceTree = "<group>"; };
+		73EF37FC242DD4E1009476ED /* swiftPackages.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = swiftPackages.xcodeproj; path = swiftPackages/swiftPackages.xcodeproj; sourceTree = "<group>"; };
 		73F3C4242078F2F600926085 /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		73F3C4262078F35200926085 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		73F3C4282078FA2100926085 /* UINavigationBar+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Ext.swift"; sourceTree = "<group>"; };
@@ -106,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D8DC922ACBD8243524C4242 /* Pods_ZhihuDailyReport.framework in Frameworks */,
+				73BCBF0D242DE54000DEAD6D /* swiftPackages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +150,7 @@
 		5AF75A837CB30FACB435A46A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				73EF37FC242DD4E1009476ED /* swiftPackages.xcodeproj */,
 				BF62FCE880C1ADDE7202E06F /* Pods_ZhihuDailyReport.framework */,
 			);
 			name = Frameworks;
@@ -275,6 +311,15 @@
 			path = Refresh;
 			sourceTree = "<group>";
 		};
+		73EF37FD242DD4E1009476ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				73EF3804242DD4E1009476ED /* swiftPackages.framework */,
+				73EF3806242DD4E1009476ED /* swiftPackagesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		73FC4B4322116CC600F3F443 /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +349,7 @@
 				73E29972206DEFFC00392C6A /* Frameworks */,
 				73E29973206DEFFC00392C6A /* Resources */,
 				19880A038BEABF63F8B3EB0B /* [CP] Embed Pods Frameworks */,
+				73BCBF0F242DE54000DEAD6D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -341,12 +387,35 @@
 			mainGroup = 73E2996C206DEFFC00392C6A;
 			productRefGroup = 73E29976206DEFFC00392C6A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 73EF37FD242DD4E1009476ED /* Products */;
+					ProjectRef = 73EF37FC242DD4E1009476ED /* swiftPackages.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				73E29974206DEFFC00392C6A /* ZhihuDailyReport */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		73EF3804242DD4E1009476ED /* swiftPackages.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = swiftPackages.framework;
+			remoteRef = 73EF3803242DD4E1009476ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		73EF3806242DD4E1009476ED /* swiftPackagesTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = file;
+			path = swiftPackagesTests.xctest;
+			remoteRef = 73EF3805242DD4E1009476ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		73E29973206DEFFC00392C6A /* Resources */ = {
@@ -598,6 +667,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 25F53AGSR9;
 				INFOPLIST_FILE = ZhihuDailyReport/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lukou.youxuan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -617,6 +687,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 25F53AGSR9;
 				INFOPLIST_FILE = ZhihuDailyReport/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lukou.youxuan;
 				PRODUCT_NAME = "$(TARGET_NAME)";

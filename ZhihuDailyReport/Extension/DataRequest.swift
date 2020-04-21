@@ -29,6 +29,7 @@ extension DataRequest {
         let object = try decoder.decode(T.self, from: data)
         return .success(object)
       } catch {
+        print("error: \(error)")
         return .failure(error)
       }
     case .failure(let error):
