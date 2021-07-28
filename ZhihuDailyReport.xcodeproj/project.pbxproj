@@ -14,6 +14,7 @@
 		734746992110358E005A0962 /* ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734746982110358E005A0962 /* ImageName.swift */; };
 		7359D1F0221409EB00BD5392 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7359D1EF221409EB00BD5392 /* CircleProgressView.swift */; };
 		7359D1F32214102900BD5392 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7359D1F22214102900BD5392 /* TitleView.swift */; };
+		7393515C26B11D9B00A190B5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7393515B26B11D9B00A190B5 /* Image.swift */; };
 		73ACC5D320BBB66C00F3356E /* ListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ACC5D220BBB66C00F3356E /* ListDataSource.swift */; };
 		73ACC5D820BD36D200F3356E /* MainStoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ACC5D720BD36D200F3356E /* MainStoryDataSource.swift */; };
 		73E29979206DEFFC00392C6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E29978206DEFFC00392C6A /* AppDelegate.swift */; };
@@ -77,6 +78,7 @@
 		734746982110358E005A0962 /* ImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageName.swift; sourceTree = "<group>"; };
 		7359D1EF221409EB00BD5392 /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		7359D1F22214102900BD5392 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		7393515B26B11D9B00A190B5 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		73ACC5D220BBB66C00F3356E /* ListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataSource.swift; sourceTree = "<group>"; };
 		73ACC5D720BD36D200F3356E /* MainStoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStoryDataSource.swift; sourceTree = "<group>"; };
 		73E29975206DEFFC00392C6A /* ZhihuDailyReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhihuDailyReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -307,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				73FC4B4422116CD700F3F443 /* MainCoordinator.swift */,
+				7393515B26B11D9B00A190B5 /* Image.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -421,7 +424,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ZhihuDailyReport/Pods-ZhihuDailyReport-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ZhihuDailyReport/Pods-ZhihuDailyReport-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AnimatedGIFImageSerialization/AnimatedGIFImageSerialization.framework",
 				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
@@ -444,7 +447,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZhihuDailyReport/Pods-ZhihuDailyReport-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZhihuDailyReport/Pods-ZhihuDailyReport-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F4C8CCF675B555CA3C4E33E4 /* [CP] Check Pods Manifest.lock */ = {
@@ -503,6 +506,7 @@
 				73E299A9206E2BA500392C6A /* UICollectionView+Ext.swift in Sources */,
 				73E29997206E171A00392C6A /* BaseViewController.swift in Sources */,
 				73E299B22071D3F700392C6A /* MainViewController.swift in Sources */,
+				7393515C26B11D9B00A190B5 /* Image.swift in Sources */,
 				73E299C02071D9DD00392C6A /* UIColor+Ext.swift in Sources */,
 				73E299C5207227E500392C6A /* Refreshable.swift in Sources */,
 				73E29994206E153200392C6A /* Story.swift in Sources */,

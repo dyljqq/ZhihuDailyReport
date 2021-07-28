@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 
 struct Story: Decodable {
   
@@ -15,14 +14,12 @@ struct Story: Decodable {
   var title: String
   var type: Int
   var hint: String
+
   var image: String?
   var images: [String]?
   
   var imageUrl: String {
-    if let image = self.image {
-      return image
-    }
-    return self.images?.first ?? ""
+    return self.image ?? self.images?.first ?? ""
   }
   
 }
