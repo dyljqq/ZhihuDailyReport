@@ -10,7 +10,7 @@ import UIKit
 import FSPagerView
 import Kingfisher
 
-class MainStoryDataSource: NSObject, NextPageLoadable, APIClient {
+class MainStoryDataSource: NSObject, NextPageLoadable {
   
   enum CellDataType {
     case title(String)
@@ -65,7 +65,7 @@ class MainStoryDataSource: NSObject, NextPageLoadable, APIClient {
   
   func performLoad(successHandler: @escaping ([DataType], Bool) -> (), failureHandler: @escaping (String) -> ()) {
     if nextPageState.start == 0 {
-      send(router: Router.lastNews) { [weak self] (storyList: StoryList?) in
+        APIClient.shared.send(router: Router.lastNews) { [weak self] (storyList: StoryList?) in
         guard let strongSelf = self else { return }
         guard let storyList = storyList else { return }
 
@@ -76,7 +76,7 @@ class MainStoryDataSource: NSObject, NextPageLoadable, APIClient {
         strongSelf.loadNext(start: strongSelf.nextPageState.start + 1, reloadView: strongSelf.tableView)
       }
     } else {
-      send(router: Router.oldStories(Date.diff(day: -Double(nextPageState.start - 1)))) { [weak self] (storyList: StoryList?) in
+        APIClient.shared.send(router: Router.oldStories(Date.diff(day: -Double(nextPageState.start - 1)))) { [weak self] (storyList: StoryList?) in
         guard let strongSelf = self else { return }
         strongSelf.loadDataFinished?()
         guard let storyList = storyList else { return }
