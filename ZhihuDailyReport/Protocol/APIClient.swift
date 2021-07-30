@@ -8,15 +8,27 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
 
-protocol APIClient {}
+protocol Client {
+    
+    func send<T: Decodable>(router: Router, completionHandler: @escaping (T?) -> ())
+    
+}
 
-extension APIClient {
+struct APIClient: Client {
+    
+  static let shared = APIClient()
+  
+  let decoder = JSONDecoder()
+  
+  init() {
+      decoder.keyDecodingStrategy = .convertFromSnakeCase
+  }
   
   func send<T: Decodable>(router: Router, completionHandler: @escaping (T?) -> ()) {
-    Alamofire.request(router).validate().responseDecodableObject { (response: DataResponse<T>) in
-      completionHandler(response.value)
+    AF.request(router).validate().responseDecodable(of: T.self, decoder: decoder) { data in
+      guard let value = data.value else { return }
+      completionHandler(value)
     }
   }
   

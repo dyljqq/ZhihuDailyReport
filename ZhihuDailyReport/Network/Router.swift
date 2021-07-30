@@ -58,7 +58,6 @@ extension Router: URLRequestConvertible {
   func asURLRequest() throws -> URLRequest {
     let url = try Router.baseURL.asURL()
     var request = URLRequest(url: url.appendingPathComponent(path))
-    print("url: \(request.url?.absoluteString)")
     request.httpMethod = method.rawValue
     request.allHTTPHeaderFields = headers
     request.timeoutInterval = TimeInterval(10 * 1000)
